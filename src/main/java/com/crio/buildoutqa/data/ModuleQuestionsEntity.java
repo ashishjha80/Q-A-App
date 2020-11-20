@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 //import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 @Data
 @Document(collection = "modulequestions")
@@ -16,7 +17,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ModuleQuestionsEntity {
   
-  //@Field("question_id")
+  @Field("questionId")
   private String questionId;
 
   private String title;
@@ -24,6 +25,6 @@ public class ModuleQuestionsEntity {
   private String type;
   private Options options;
   
-  //@Field("correct_answer")
+  @Field("correctAnswer")
   private List<String> correctAnswer = new ArrayList<>();
 }
