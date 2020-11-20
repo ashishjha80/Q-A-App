@@ -19,3 +19,4 @@ done
 
 # If you have any script to load the data make sure that its part of this bash script.
 
+bash load-sample-data.sh
