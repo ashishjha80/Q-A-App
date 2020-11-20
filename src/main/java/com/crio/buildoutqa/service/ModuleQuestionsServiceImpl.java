@@ -26,15 +26,12 @@ public class ModuleQuestionsServiceImpl implements ModuleQuestionsService {
   public GetQuestions findAllQuestionsForModule() {
     List<ModuleQuestionsEntity> questionWithAnswers = moduleQuestionsRepository
             .findAll();
-    System.out.println(questionWithAnswers);
-    System.out.println("endl");
     List<Question> questions = new ArrayList<>();
     ModelMapper modelMapper = new ModelMapper();
     for (ModuleQuestionsEntity ques : questionWithAnswers) {
       Question question = modelMapper.map(ques,Question.class);
       questions.add(question);
     }
-    System.out.println(questions);
     return new GetQuestions(questions);
   }
   
@@ -42,13 +39,9 @@ public class ModuleQuestionsServiceImpl implements ModuleQuestionsService {
       UserSubmissionRequest userSubmissionRequest) {
         
     List<UserResponse> responses = userSubmissionRequest.getResponses();
-    System.out.println(responses);
-    System.out.println("endl");
     Collections.sort(responses,Comparator.comparing(UserResponse::getQuestionId));
     List<ModuleQuestionsEntity> questionWithAnswers = moduleQuestionsRepository
             .findAll();
-    System.out.println(questionWithAnswers);
-    System.out.println("endl");
     Collections.sort(questionWithAnswers,Comparator.comparing(ModuleQuestionsEntity
             ::getQuestionId));
     List<QuestionWithAnswersAndUserResponse> questionsResult = new ArrayList<>();
@@ -68,11 +61,7 @@ public class ModuleQuestionsServiceImpl implements ModuleQuestionsService {
       currQuestion.setExplanation(null);
       questionsResult.add(currQuestion);
     }
-    System.out.println(questionsResult);
-    System.out.println("endl");
     Summary summary = new Summary(count,n);
-    System.out.println(summary);
-    System.out.println("endl");
     return new UserSubmissionRequestResult(questionsResult, summary);
     
   }
