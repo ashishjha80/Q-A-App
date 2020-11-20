@@ -5,6 +5,7 @@ plugins {
     id 'com.github.spotbugs' version '4.5.0'
     id 'checkstyle'
     id 'jacoco'
+    id 'pmd'
 }
 
 group = 'com.crio'
@@ -79,6 +80,13 @@ spotbugsTest {
         html.enabled = true
     }
 }
+
+pmd {
+        toolVersion = "6.10.0"
+        sourceSets = [sourceSets.main]
+        ruleSetFiles = files("${rootProject.projectDir}/__CRIO__/ruleset.xml")
+        ignoreFailures = true
+    }
 
 jacoco {
     toolVersion = "0.8.4"
