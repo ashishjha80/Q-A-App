@@ -13,4 +13,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class GetQuestions {
   private List<Question> questions = new ArrayList<>();
+  
 }
