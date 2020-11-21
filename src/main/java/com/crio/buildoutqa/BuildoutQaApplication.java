@@ -8,5 +8,6 @@ public class BuildoutQaApplication {
   public static void main(String[] args) {
     SpringApplication.run(BuildoutQaApplication.class, args);
   }
+  
 
 }
