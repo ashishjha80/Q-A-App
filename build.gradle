@@ -68,7 +68,6 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test:2.1.4.RELEASE") {
         exclude group: "junit", module: "junit"
     }
-
     testImplementation "de.flapdoodle.embed:de.flapdoodle.embed.mongo"
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.3.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.3.1")
@@ -118,6 +117,7 @@ jacocoTestReport {
 
 
 test {
+    
     useJUnitPlatform()
     testLogging.events ("STANDARD_ERROR")
     testLogging.events ("STANDARD_OUT")

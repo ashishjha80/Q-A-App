@@ -1,4 +1,4 @@
-package com.crio.buildoutqa.service;
+package com.crio.buildoutqa;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
@@ -8,6 +8,7 @@ import com.crio.buildoutqa.exchange.GetQuestions;
 import com.crio.buildoutqa.exchange.UserSubmissionRequest;
 import com.crio.buildoutqa.exchange.UserSubmissionRequestResult;
 import com.crio.buildoutqa.repository.ModuleQuestionsRepository;
+import com.crio.buildoutqa.service.ModuleQuestionsServiceImpl;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
